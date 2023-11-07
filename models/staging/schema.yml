@@ -1,0 +1,16 @@
+version: 2 
+
+models:
+  - name: stg_orders
+    description: "table that contains all the orders"
+    columns:
+      - name: order_id
+        description: unique identifier for an order
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests: 
+          - accepted_values:
+              values: ['shipped', 'completed', 'return_pending', 'returned', 'placed']
+            
