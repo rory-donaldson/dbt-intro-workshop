@@ -7,6 +7,6 @@ select
     payment_id
 from {{ ref('stg_payments')}} 
 where paymentmethod = 'gift_card' 
-    and amount > 1000 
+    and amount > 5000 
     and status = 'success'
 
